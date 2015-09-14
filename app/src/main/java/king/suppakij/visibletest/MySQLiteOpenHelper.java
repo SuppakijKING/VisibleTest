@@ -14,11 +14,22 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "Restaurant.db";
     private static final int DATABASE_VERSION = 1;
-    private static final String CREATE_ADMIN_TABLE = "create table userTABLE (_id integer primary key, User text, Password text, Name text);";
-    private static final String CREATE_OWNER_TABLE = "create table userTABLE (_id integer primary key, Own_id text, Own_pass text, Own_name text, Own_lastname text, Own_idno integer, Own_email text, Own_address text, Own_tel integer );";
-    private static final String CREATE_RESTAURANT_TABLE = "create table foodTABLE (_id integer primary key, Rest_name text,Rest_Activate text, Rest_pic text, Rest_email text, Rest_tel text,Rest_address text, Rest_Signdate text);";
-    private static final String CREATE_FOOD_TABLE = "create table foodTABLE (_id integer primary key, Food text, Source text, Price text);";
-    private static final String CREATE_SERVICE_TABLE = "create table foodTABLE (_id integer primary key, Guest_name text, Guest_tel integer, Guest_address text);";
+
+    private static final String CREATE_ADMIN_TABLE =
+            "create table adminTABLE" +
+                    "(_id integer primary key, User text, Password text, Name text);";
+    private static final String CREATE_OWNER_TABLE =
+            "create table ownerTABLE" +
+                    "(_id integer primary key, Own_id text, Own_pass text, Own_name text, Own_lastname text, Own_idno integer, Own_email text, Own_address text, Own_tel integer );";
+    private static final String CREATE_RESTAURANT_TABLE =
+            "create table restaurantTABLE" +
+                    "(_id integer primary key, Rest_name text,Rest_Activate text, Rest_pic text, Rest_email text, Rest_tel text,Rest_address text, Rest_Signdate text);";
+    private static final String CREATE_FOOD_TABLE =
+            "create table foodTABLE" +
+                    "(_id integer primary key, Food text, Source text, Price text);";
+    private static final String CREATE_SERVICE_TABLE =
+            "create table serviceTABLE" +
+                    "(_id integer primary key, Guest_name text, Guest_tel integer, Guest_address text);";
 
 
     public MySQLiteOpenHelper(Context context) {
@@ -26,18 +37,16 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
     }//Constructor
 
     @Override
-    public void onCreate(SQLiteDatabase db) {
-
-        db.execSQL(CREATE_ADMIN_TABLE);
-        db.execSQL(CREATE_OWNER_TABLE);
-        db.execSQL(CREATE_RESTAURANT_TABLE);
-        db.execSQL(CREATE_FOOD_TABLE);
-        db.execSQL(CREATE_SERVICE_TABLE);
-
+    public void onCreate(SQLiteDatabase sqLiteDatabase) {
+        sqLiteDatabase.execSQL(CREATE_ADMIN_TABLE);
+        sqLiteDatabase.execSQL(CREATE_RESTAURANT_TABLE);
+        sqLiteDatabase.execSQL(CREATE_OWNER_TABLE);
+        sqLiteDatabase.execSQL(CREATE_FOOD_TABLE);
+        sqLiteDatabase.execSQL(CREATE_SERVICE_TABLE);
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
 
     }
 } // Main class

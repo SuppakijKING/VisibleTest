@@ -2,7 +2,6 @@ package king.suppakij.visibletest;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
 
 /**
  * Created by KING on 14-Sep-15.

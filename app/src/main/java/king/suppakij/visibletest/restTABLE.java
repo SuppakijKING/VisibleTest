@@ -12,7 +12,7 @@ public class restTABLE {
     private SQLiteDatabase writeSqLiteDatabase, readSqLiteDatabase;
 
 
-    public restTABLE(Context context) {
+    public restTABLE (Context context) {
 
         objMySQLiteOpenHelper = new MySQLiteOpenHelper(context);
         writeSqLiteDatabase = objMySQLiteOpenHelper.getWritableDatabase();

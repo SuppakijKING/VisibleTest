@@ -12,7 +12,7 @@ public class ownerTABLE {
     private SQLiteDatabase writeSqLiteDatabase, readSqLiteDatabase;
 
 
-    public ownerTABLE(Context context) {
+    public ownerTABLE (Context context) {
 
         objMySQLiteOpenHelper = new MySQLiteOpenHelper(context);
         writeSqLiteDatabase = objMySQLiteOpenHelper.getWritableDatabase();
