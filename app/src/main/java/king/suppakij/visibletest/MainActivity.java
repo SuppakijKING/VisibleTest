@@ -23,11 +23,23 @@ public class MainActivity extends AppCompatActivity {
 
         connectedSQLite();
 
+        testAddValue();
+
         bindWidget();
 
         createListview();
 
     } // main method onCreate
+
+    private void testAddValue() {
+
+        objAdminTABLE.addNewAdmin("adminking","12345","ศุภกิจ");
+        objFoodTABLE.addFood("Caramel Frappe", "TEST PIC", "99");
+        objOwnerTABLE.addOwner("ownerking", "12345", "ศุภกิจ", "บุญราวี", "1670700230150", "Colorgray.love@hotmail.com", "TEST ADDRESSS", "0840716727");
+        objRestTABLE.addRest("TEST BEYOND", "1", "TEST PIC", "TEST EMAIL", "0876432300", "TEST ADDRESS", "TEST DATE");
+        objServiceTABLE.addService("นายแดง สีน้ำเงิน","0881771777","TEST ADDRESS");
+
+    }// testAddValue
 
     private void connectedSQLite() {
 
